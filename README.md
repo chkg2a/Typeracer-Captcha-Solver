@@ -9,4 +9,4 @@ press `f4` before starting the test
 
 ## Results
 Easy :]
-![image](./images/770.png)
+![image](./Images/770.png)
