@@ -8,5 +8,4 @@ You can adjust the configs according to your needs
 press `f4` before starting the test
 
 ## Results
-Easy :]
-![image](./Images/770.png)
+![screen-gif](./Images/gif.gif)
