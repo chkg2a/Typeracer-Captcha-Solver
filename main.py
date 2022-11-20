@@ -5,7 +5,7 @@ import pyperclip
 import time
 import random
 from time import sleep
-import ocr_example
+import ocr_api
 
 keyboard = Controller()
 # Change x and y coor around the middle
@@ -64,14 +64,19 @@ while True:
             if pyautogui.pixel(940,400)[0] in range(196,202) or pyautogui.pixel(1150,400)[0] in range(200,210):
                 get_text(x,y)
                 url = pyperclip.paste()
-                pyautogui.click(x,y+100)
+                pyautogui.click(x,y+130)
                 time_start=time.time()
-                ocr_text = ocr_example.get_ocr_results(url,5)
+                ocr_text = ocr_api.get_ocr_results(url,5)
                 time_end=time.time()
                 print(ocr_text)
                 print(f"Took {time_end-time_start}secs to convert the text.\n")
                 keyboard.type(ocr_text)
-                kb.press('tab+enter')
+                keyboard.press(Key.tab)
+                sleep(0.001)
+                keyboard.press(Key.enter)
+                sleep(0.001)
+                keyboard.release(Key.tab)
+                keyboard.release(Key.enter)
                 break
     #Types at 125wpm any copied text
     if kb.is_pressed('f2'):
