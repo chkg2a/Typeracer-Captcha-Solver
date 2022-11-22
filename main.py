@@ -16,7 +16,7 @@ x, y = 936, 460
 # 2 - 2.218 - Acc(85%) 165000
 # 3 - 4.654 - Acc(70%) 1094
 # 5 - 5.88  - Acc(98%) 502
-
+engine = 5
 
 # Random enough ;)
 fastTestSpeed_rand1 = 0.04
@@ -66,7 +66,7 @@ while True:
                 url = pyperclip.paste()
                 pyautogui.click(x,y+130)
                 time_start=time.time()
-                ocr_text = ocr_api.get_ocr_results(url,5)
+                ocr_text = ocr_api.get_ocr_results(url,engine)
                 time_end=time.time()
                 print(ocr_text)
                 print(f"Took {time_end-time_start}secs to convert the text.\n")
